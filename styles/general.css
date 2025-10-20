@@ -1,0 +1,110 @@
+/* 
+
+--- 01 TYPOGRAPHY SYSTEM
+	-FONT SIZE SYSTEM (px):
+   14 / 16 / 18 / 24 / 56
+  -FONT WEIGHTS:
+   Medium - 500
+   Bold - 700
+
+  -LINE HEIGHTS:
+   Default: 1
+   Medium: 1.5   
+
+--- 02 COLOURS
+   Primary: 
+    --red: #d73328ff
+    --lime: #d7da2fff
+		
+   Neutral: 
+    --white: hsl(0, 0%, 100%);
+    --slate-100: hsl(202, 86%, 94%);
+    --slate-300: hsl(203, 41%, 72%);
+    --slate-500: hsl(200, 26%, 54%);
+    --slate-700: hsl(200, 24%, 40%);
+    --slate-900: hsl(202, 55%, 16%);
+  
+--- 07 WHITESPACE
+  -SPACING SYSTEM (px):
+   8 / 12 / 16 / 24 / 32 / 40
+*/
+
+/* CSS RESET */
+
+:root {
+	--red: #d73328ff;
+	--lime: #d7da2fff;
+	--white: hsl(0, 0%, 100%);
+	--slate-100: hsl(202, 86%, 94%);
+	--slate-300: hsl(203, 41%, 72%);
+	--slate-500: hsl(200, 26%, 54%);
+	--slate-700: hsl(200, 24%, 40%);
+	--slate-900: hsl(202, 55%, 16%);
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	background-color: var(--slate-100);
+	line-height: 1;
+	height: 100vh;
+	/* display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center; */
+}
+
+/* TEXT */
+
+a {
+	color: var(--slate-700);
+}
+
+a:hover {
+	color: var(--slate-900);
+}
+
+.text--bold {
+	font-weight: 700;
+	line-height: 1.25;
+	letter-spacing: -1px;
+}
+
+.text--medium {
+	font-weight: 500;
+	line-height: 1.5;
+	letter-spacing: 0px;
+}
+
+.text--preset-1 {
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-size: 5.6rem;
+}
+
+.text--preset-2 {
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-size: 2.4rem;
+}
+
+.text--preset-3 {
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-size: 1.8rem;
+}
+
+.text--preset-4 {
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-size: 1.6rem;
+}
+
+.text--preset-5 {
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-size: 1.4rem;
+}
