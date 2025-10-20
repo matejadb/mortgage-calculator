@@ -30,34 +30,61 @@
 
 				<form class="form-fields">
 					<div class="mortgage-amount">
-						<label for="amount">Mortgage Amount</label>
-						<input type="text" />
+						<label class="text--medium text--preset-4" for="amount"
+							>Mortgage Amount</label
+						>
+						<div class="input-container">
+							<span class="prefix-text text--preset-3">$</span>
+							<input type="text" name="amount" id="amount" />
+						</div>
 					</div>
 
 					<div class="mortgage-term-rate">
 						<div class="mortgage-term">
-							<label for="term">Mortgage Term</label>
-							<input type="text" />
+							<label class="text--medium text--preset-4" for="term"
+								>Mortgage Term</label
+							>
+							<input type="text" id="term" />
 						</div>
 						<div class="mortgage-rate">
-							<label for="term">Mortgage Rate</label>
-							<input type="text" />
+							<label class="text--medium text--preset-4" for="rate"
+								>Mortgage Rate</label
+							>
+							<input type="text" id="rate" />
 						</div>
 					</div>
 
 					<div class="mortgage-type">
-						<label for="type">Mortgage Type</label>
-						<input type="radio" value="repayment" name="type" id="repayment" />
-						<label for="repayment">Repayment</label>
-						<input
-							type="radio"
-							value="interest-only"
-							name="type"
-							id="interest-only"
-						/>
-						<label for="interest-only">Interest Only</label>
+						<label class="text--medium text--preset-4">Mortgage Type</label>
+						<div class="option">
+							<input
+								type="radio"
+								value="repayment"
+								name="type"
+								id="repayment"
+							/>
+							<label class="text--bold text--preset-3" for="repayment"
+								>Repayment</label
+							>
+						</div>
+						<div class="option">
+							<input
+								type="radio"
+								value="interest-only"
+								name="type"
+								id="interest-only"
+							/>
+							<label class="text--bold text--preset-3" for="interest-only"
+								>Interest Only</label
+							>
+						</div>
 					</div>
-					<button type="submit">Caclulate Repayments</button>
+					<button class="btn text--bold text--preset-3" type="submit">
+						<img
+							src="./assets/images/icon-calculator.svg"
+							alt="calculator icon"
+						/>Caclulate Repayments
+					</button>
 				</form>
 			</div>
 			<div class="results-container">

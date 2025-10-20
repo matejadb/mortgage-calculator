@@ -33,7 +33,7 @@
 
 :root {
 	--red: #d73328ff;
-	--lime: #d7da2fff;
+	--lime: #d7da2f;
 	--white: hsl(0, 0%, 100%);
 	--slate-100: hsl(202, 86%, 94%);
 	--slate-300: hsl(203, 41%, 72%);
@@ -105,4 +105,27 @@ a:hover {
 .text--preset-5 {
 	font-family: 'Plus Jakarta Sans', sans-serif;
 	font-size: 1.4rem;
+}
+
+.btn {
+	padding: 2.2rem 4rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1.2rem;
+	border-radius: 10000rem;
+	border: 1px solid #6b94a8;
+	align-self: flex-start;
+	background-color: var(--lime);
+	color: var(--slate-900);
+}
+
+.btn:hover {
+	cursor: pointer;
+	background: #ffffff;
+	background: linear-gradient(
+		178deg,
+		rgba(255, 255, 255, 1) 0%,
+		rgba(215, 218, 47, 1) 100%
+	);
 }
