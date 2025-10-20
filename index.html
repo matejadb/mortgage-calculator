@@ -27,8 +27,45 @@
 					<h2 class="text--preset-2">Mortgage Calculator</h2>
 					<a class="text--preset-4" href="#">Clear All</a>
 				</div>
+
+				<form class="form-fields">
+					<label for="amount">Mortgage Amount</label>
+					<input type="text" />
+
+					<div class="mortgage-term-rate">
+						<div class="mortgage-term">
+							<label for="term">Mortgage Term</label>
+							<input type="text" />
+						</div>
+						<div class="mortgage-rate">
+							<label for="term">Mortgage Rate</label>
+							<input type="text" />
+						</div>
+					</div>
+
+					<div class="mortgage-type">
+						<label for="type">Mortgage Type</label>
+						<input type="radio" value="repayment" name="type" id="repayment" />
+						<label for="repayment">Repayment</label>
+						<input
+							type="radio"
+							value="interest-only"
+							name="type"
+							id="interest-only"
+						/>
+						<label for="interest-only">Interest Only</label>
+					</div>
+					<button type="submit">Caclulate Repayments</button>
+				</form>
 			</div>
-			<div class="results-container"></div>
+			<div class="results-container">
+				<img src="./assets/images/illustration-empty.svg" alt="empty picture" />
+				<h2>Results shown here</h2>
+				<p>
+					Complete the form and click “calculate repayments” to see what your
+					monthly repayments would be.
+				</p>
+			</div>
 		</div>
 
 		<div class="attribution text--preset-4">
