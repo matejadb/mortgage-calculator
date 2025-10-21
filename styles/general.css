@@ -108,7 +108,8 @@ a:hover {
 }
 
 .btn {
-	padding: 2.2rem 4rem;
+	padding: 0 4rem;
+	height: 5.6rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -122,10 +123,5 @@ a:hover {
 
 .btn:hover {
 	cursor: pointer;
-	background: #ffffff;
-	background: linear-gradient(
-		178deg,
-		rgba(255, 255, 255, 1) 0%,
-		rgba(215, 218, 47, 1) 100%
-	);
+	background-color: rgba(215, 218, 47, 0.5);
 }

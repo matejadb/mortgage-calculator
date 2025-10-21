@@ -24,6 +24,7 @@
 .title-bar {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 }
 
 form.form-fields {
@@ -73,6 +74,7 @@ form label {
 .mortgage-term-rate {
 	display: flex;
 	justify-content: space-between;
+	gap: 2.4rem;
 }
 
 .mortgage-term,
@@ -84,6 +86,36 @@ form label {
 
 .mortgage-term-rate input {
 	width: 100%;
+}
+
+.mortgage-type {
+	display: flex;
+	flex-direction: column;
+	gap: 1.2rem;
+}
+
+.option {
+	padding: 1.6rem;
+	display: flex;
+	gap: 1.6rem;
+	align-items: center;
+	border: 1px solid var(--slate-500);
+	border-radius: 4px;
+}
+
+input[type='radio'] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	width: 2rem;
+	height: 2rem;
+	border: 1px solid var(--slate-700);
+	border-radius: 50%;
+}
+
+input[type='radio']:checked {
+	background-color: var(--lime);
+	border-color: var(--lime);
 }
 
 /* RESULTS CONTAINER */
