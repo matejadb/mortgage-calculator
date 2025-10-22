@@ -33,7 +33,12 @@ form.form-fields {
 	gap: 2.4rem;
 }
 
-form label {
+.input-text {
+	color: var(--slate-900);
+}
+
+form label,
+form p {
 	color: var(--slate-700);
 }
 
@@ -56,6 +61,7 @@ form label {
 
 .input-container input {
 	padding: 0 1.6rem;
+
 	border: none;
 	outline: none;
 	flex-grow: 1;
@@ -104,18 +110,14 @@ form label {
 }
 
 input[type='radio'] {
-	-webkit-appearance: none;
+	/* -webkit-appearance: none;
 	-moz-appearance: none;
-	appearance: none;
+	appearance: none; */
+	/* accent-color: var(--lime); */
 	width: 2rem;
 	height: 2rem;
 	border: 1px solid var(--slate-700);
 	border-radius: 50%;
-}
-
-input[type='radio']:checked {
-	background-color: var(--lime);
-	border-color: var(--lime);
 }
 
 /* RESULTS CONTAINER */
