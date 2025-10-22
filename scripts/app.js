@@ -1,4 +1,8 @@
 const form = document.querySelector('.form-fields');
+const clearAll = document.querySelector('.clear-all');
+
+const emptyResult = document.querySelector('.results-container-empty');
+const completedResult = document.querySelector('.results-container-completed');
 
 form.addEventListener('submit', (e) => {
 	e.preventDefault();
@@ -17,9 +21,26 @@ form.addEventListener('submit', (e) => {
 		let down = Math.pow(1 + interestRate, loanTerm) - 1;
 		let monthlyPayment = loanAmount * (up / down);
 
-		console.log(Math.round(monthlyPayment * 100) / 100);
-		console.log(Math.round(monthlyPayment * loanTerm * 100) / 100);
+		const monthly = document.querySelector('.monthly-payment');
+		const total = document.querySelector('.total-payment');
+
+		monthly.textContent =
+			'£' + (Math.round(monthlyPayment * 100) / 100).toLocaleString('en-US');
+
+		total.textContent =
+			'£' +
+			(Math.round(monthlyPayment * loanTerm * 100) / 100).toLocaleString(
+				'en-US'
+			);
 	}
 
-	console.log(amountInput, termInput, rateInput, typeInput);
+	emptyResult.classList.add('hidden');
+	completedResult.classList.remove('hidden');
+});
+
+clearAll.addEventListener('click', (e) => {
+	e.preventDefault();
+
+	emptyResult.classList.remove('hidden');
+	completedResult.classList.add('hidden');
 });
