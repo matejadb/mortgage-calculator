@@ -112,6 +112,19 @@ a:hover {
 	font-size: 1.4rem;
 }
 
+.input-container-error {
+	border: 1px solid var(--red);
+}
+
+.prefix-text-error {
+	color: var(--white);
+	background-color: var(--red);
+}
+
+.error-text {
+	color: var(--red);
+}
+
 .btn {
 	padding: 0 4rem;
 	height: 5.6rem;

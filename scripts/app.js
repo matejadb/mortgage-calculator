@@ -17,15 +17,23 @@ form.addEventListener('submit', (e) => {
 	let loanAmount = parseFloat(amountInput.value.replace(/,/g, ''));
 	let interestRate = parseFloat(rateInput.value) / 12 / 100;
 	let loanTerm = parseFloat(termInput.value) * 12;
-
+	const monthly = document.querySelector('.monthly-payment');
+	const total = document.querySelector('.total-payment');
 	if (typeInput == 'repayment') {
 		let up = interestRate * Math.pow(1 + interestRate, loanTerm);
 		let down = Math.pow(1 + interestRate, loanTerm) - 1;
 		let monthlyPayment = loanAmount * (up / down);
 
-		const monthly = document.querySelector('.monthly-payment');
-		const total = document.querySelector('.total-payment');
+		monthly.textContent =
+			'£' + (Math.round(monthlyPayment * 100) / 100).toLocaleString('en-US');
 
+		total.textContent =
+			'£' +
+			(Math.round(monthlyPayment * loanTerm * 100) / 100).toLocaleString(
+				'en-US'
+			);
+	} else if (typeInput == 'interest-only') {
+		let monthlyPayment = loanAmount * interestRate;
 		monthly.textContent =
 			'£' + (Math.round(monthlyPayment * 100) / 100).toLocaleString('en-US');
 
@@ -52,4 +60,23 @@ clearAll.addEventListener('click', (e) => {
 
 	emptyResult.classList.remove('hidden');
 	completedResult.classList.add('hidden');
+});
+
+const inputContainers = document.querySelectorAll('.input-container');
+
+inputContainers.forEach((container) => {
+	container.addEventListener('click', () => {
+		const input = container.querySelector('input');
+
+		input.focus();
+	});
+});
+
+const options = document.querySelectorAll('.option');
+
+options.forEach((option) => {
+	option.addEventListener('click', () => {
+		const radio = option.querySelector('input[name="type"]');
+		if (radio) radio.checked = true;
+	});
 });
