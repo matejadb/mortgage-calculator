@@ -60,6 +60,10 @@ body {
 	align-items: center;
 }
 
+.hidden {
+	display: none;
+}
+
 /* TEXT */
 
 a {
