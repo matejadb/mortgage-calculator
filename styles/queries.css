@@ -1,0 +1,38 @@
+/*   Tablets    */
+/*  Below 832px */
+
+@media (max-width: 52em) {
+	body {
+		display: block;
+	}
+
+	.main-content {
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto;
+	}
+
+	.results-container-empty,
+	.results-container-completed {
+		border-radius: 2.4rem;
+		border-top-left-radius: 0rem;
+		border-top-right-radius: 0rem;
+	}
+}
+
+/*   Phones     */
+/*  Below 448px */
+
+@media (max-width: 28em) {
+	.mortgage-term-rate {
+		flex-direction: column;
+	}
+
+	.results-container-empty,
+	.results-container-completed {
+		padding: 3.2rem 2.4rem;
+	}
+
+	.btn {
+		width: 100%;
+	}
+}
