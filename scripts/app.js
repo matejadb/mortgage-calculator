@@ -28,38 +28,18 @@ form.addEventListener('submit', (e) => {
 
 	const typeInput = document.querySelector('input[name="type"]:checked');
 
-	let isValid = true;
-
-	amountError.classList.add('hidden');
-	termError.classList.add('hidden');
-	rateError.classList.add('hidden');
-	typeError.classList.add('hidden');
-
-	prefix.classList.remove('prefix-text-error');
-	suffixTerm.classList.remove('prefix-text-error');
-	suffixRate.classList.remove('prefix-text-error');
-
-	if (!amountInput.value) {
-		amountError.classList.remove('hidden');
-		prefix.classList.add('prefix-text-error');
-		isValid = false;
-	}
-	if (!termInput.value) {
-		termError.classList.remove('hidden');
-		suffixTerm.classList.add('prefix-text-error');
-		isValid = false;
-	}
-	if (!rateInput.value) {
-		rateError.classList.remove('hidden');
-		suffixRate.classList.add('prefix-text-error');
-		isValid = false;
-	}
-	if (!typeInput) {
-		typeError.classList.remove('hidden');
-		isValid = false;
-	}
+	let isValid = validateInput(
+		amountInput.value,
+		termInput.value,
+		rateInput.value,
+		typeInput
+	);
 
 	if (!isValid) return;
+
+	function calculatePayment(){
+		
+	}
 
 	/**
 	 * If a user enters 300,000 it will remove the comma and just parse 300000
@@ -97,6 +77,41 @@ form.addEventListener('submit', (e) => {
 	emptyResult.classList.add('hidden');
 	completedResult.classList.remove('hidden');
 });
+
+function validateInput(amount, term, rate, type) {
+	let isValid = true;
+
+	amountError.classList.add('hidden');
+	termError.classList.add('hidden');
+	rateError.classList.add('hidden');
+	typeError.classList.add('hidden');
+
+	prefix.classList.remove('prefix-text-error');
+	suffixTerm.classList.remove('prefix-text-error');
+	suffixRate.classList.remove('prefix-text-error');
+
+	if (!amount) {
+		amountError.classList.remove('hidden');
+		prefix.classList.add('prefix-text-error');
+		isValid = false;
+	}
+	if (!term) {
+		termError.classList.remove('hidden');
+		suffixTerm.classList.add('prefix-text-error');
+		isValid = false;
+	}
+	if (!rate) {
+		rateError.classList.remove('hidden');
+		suffixRate.classList.add('prefix-text-error');
+		isValid = false;
+	}
+	if (!type) {
+		typeError.classList.remove('hidden');
+		isValid = false;
+	}
+
+	return isValid;
+}
 
 clearAll.addEventListener('click', (e) => {
 	e.preventDefault();
