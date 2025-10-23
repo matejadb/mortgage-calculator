@@ -23,6 +23,9 @@
 /*  Below 448px */
 
 @media (max-width: 28em) {
+	html {
+		font-size: 50%;
+	}
 	.mortgage-term-rate {
 		flex-direction: column;
 	}
