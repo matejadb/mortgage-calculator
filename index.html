@@ -32,9 +32,9 @@
 
 				<form class="form-fields">
 					<div class="mortgage-amount">
-						<label class="text--medium text--preset-4" for="amount"
-							>Mortgage Amount</label
-						>
+						<label class="text--medium text--preset-4" for="amount">
+							Mortgage Amount
+						</label>
 						<div class="input-container">
 							<span class="prefix-text text--bold text--preset-3">£</span>
 							<input
@@ -44,7 +44,9 @@
 								id="amount"
 							/>
 						</div>
-						<span class="text--medium text--preset-5"></span>
+						<span class="text--medium text--preset-5 error-text hidden">
+							This field is required
+						</span>
 					</div>
 
 					<div class="mortgage-term-rate">
@@ -56,12 +58,14 @@
 								<input
 									type="text"
 									class="text--bold text--preset-3 input-text"
-									name="amount"
+									name="term"
 									id="term"
 								/>
 								<span class="suffix-text text--bold text--preset-3">years</span>
 							</div>
-							<span class="text--medium text--preset-5"></span>
+							<span class="text--medium text--preset-5 error-text hidden">
+								This field is required
+							</span>
 						</div>
 						<div class="mortgage-rate">
 							<label class="text--medium text--preset-4" for="rate"
@@ -71,12 +75,14 @@
 								<input
 									type="text"
 									class="text--bold text--preset-3 input-text"
-									name="amount"
+									name="rate"
 									id="rate"
 								/>
 								<span class="suffix-text text--bold text--preset-3">%</span>
 							</div>
-							<span class="text--medium text--preset-5"></span>
+							<span class="text--medium text--preset-5 error-text hidden">
+								This field is required
+							</span>
 						</div>
 					</div>
 
@@ -104,7 +110,9 @@
 								>Interest Only</label
 							>
 						</div>
-						<span class="text--medium text--preset-5"></span>
+						<span class="text--medium text--preset-5 error-text hidden">
+							This field is required
+						</span>
 					</div>
 					<button class="btn text--bold text--preset-3" type="submit">
 						<img
