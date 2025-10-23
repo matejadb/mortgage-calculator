@@ -125,6 +125,20 @@ a:hover {
 	color: var(--red);
 }
 
+.radio-checked {
+	background-color: rgba(216, 219, 47, 0.15);
+	border: 1px solid #d7da2f;
+}
+
+.input-container-focus {
+	border: 1px solid var(--lime);
+}
+
+.input-container-span-focus {
+	background-color: var(--lime);
+	color: var(--slate-900);
+}
+
 .btn {
 	padding: 0 4rem;
 	height: 5.6rem;
@@ -137,6 +151,7 @@ a:hover {
 	align-self: flex-start;
 	background-color: var(--lime);
 	color: var(--slate-900);
+	border: none;
 }
 
 .btn:hover {

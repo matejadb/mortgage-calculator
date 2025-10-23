@@ -108,6 +108,14 @@ clearAll.addEventListener('click', (e) => {
 	const checkedType = document.querySelector('input[name="type"]:checked');
 	if (checkedType) checkedType.checked = false;
 
+	inputContainers.forEach((inp) => {
+		inp.classList.remove('input-container-focus');
+		const focusSpan = inp.querySelector('span');
+
+		focusSpan.classList.remove('input-container-span-focus');
+	});
+	options.forEach((opt) => opt.classList.remove('radio-checked'));
+
 	emptyResult.classList.remove('hidden');
 	completedResult.classList.add('hidden');
 	prefix.classList.remove('prefix-text-error');
@@ -122,10 +130,24 @@ clearAll.addEventListener('click', (e) => {
 const inputContainers = document.querySelectorAll('.input-container');
 
 inputContainers.forEach((container) => {
-	container.addEventListener('click', () => {
-		const input = container.querySelector('input');
+	container.addEventListener('click', (e) => {
+		e.stopPropagation();
 
+		const input = container.querySelector('input');
 		input.focus();
+
+		inputContainers.forEach((inp) => {
+			inp.classList.remove('input-container-focus');
+			const focusSpan = inp.querySelector('span');
+
+			focusSpan.classList.remove('input-container-span-focus');
+		});
+
+		const focusEl = input.closest('.input-container');
+		const focusElSpan = focusEl.querySelector('span');
+
+		focusEl.classList.add('input-container-focus');
+		focusElSpan.classList.add('input-container-span-focus');
 	});
 });
 
@@ -134,6 +156,20 @@ const options = document.querySelectorAll('.option');
 options.forEach((option) => {
 	option.addEventListener('click', () => {
 		const radio = option.querySelector('input[name="type"]');
-		if (radio) radio.checked = true;
+		if (radio) {
+			options.forEach((opt) => opt.classList.remove('radio-checked'));
+
+			radio.checked = true;
+			option.classList.add('radio-checked');
+		}
+	});
+});
+
+document.addEventListener('click', () => {
+	inputContainers.forEach((inp) => {
+		inp.classList.remove('input-container-focus');
+		const focusSpan = inp.querySelector('span');
+
+		focusSpan.classList.remove('input-container-span-focus');
 	});
 });

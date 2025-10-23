@@ -116,6 +116,11 @@ form p {
 	gap: 1.2rem;
 }
 
+.option label,
+.option input {
+	cursor: pointer;
+}
+
 .option {
 	padding: 1.6rem;
 	display: flex;
@@ -126,14 +131,32 @@ form p {
 }
 
 input[type='radio'] {
-	/* -webkit-appearance: none;
+	appearance: none;
+	-webkit-appearance: none;
 	-moz-appearance: none;
-	appearance: none; */
-	/* accent-color: var(--lime); */
+	accent-color: var(--lime);
 	width: 2rem;
 	height: 2rem;
 	border: 1px solid var(--slate-700);
 	border-radius: 50%;
+	outline: none;
+	position: relative;
+}
+
+input[type='radio']:checked {
+	border-color: var(--lime);
+}
+
+input[type='radio']:checked::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 1.2rem;
+	height: 1.2rem;
+	border-radius: 50%;
+	background-color: var(--lime);
 }
 
 .option:hover {
